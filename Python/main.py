@@ -6,7 +6,9 @@ candidato1 = {
     "apellidos":"Perez Garcia",
     "puesto":"programador",
     "tecnologia":"python",
-    "experiencia":4
+    "experiencia":4,
+    "gmail":"juanperez@gmail.com",
+    "telefono":611111111
 }
 
 candidato2 = {
@@ -15,7 +17,9 @@ candidato2 = {
     "apellidos":"Benito Lopez",
     "puesto":"diseñador web",
     "tecnologia":"html",
-    "experiencia":2
+    "experiencia":2,
+    "gmail":"alvarobenito@gmail.com",
+    "telefono":622222222
 }
 
 candidato3 = {
@@ -24,17 +28,11 @@ candidato3 = {
     "apellidos":"Martin Aramburu",
     "puesto":"programador",
     "tecnologia":"python",
-    "experiencia":3
+    "experiencia":3,
+    "gmail":"alfonsomartin@gmail.com",
+    "telefono":633333333
 }
 
-candidato4= {
-    "id":4,
-    "nombre": "Unai",
-    "apellidos":"Etxeberria Jimenez",
-    "puesto":"programador",
-    "tecnologia":"java",
-    "experiencia":5
-}
 
 candidatos =[candidato1, candidato2, candidato3]
 
@@ -43,9 +41,29 @@ def buscar_tecnologia(tecnologia_buscada):
         if candidato ["tecnologia"] == tecnologia_buscada:
             print([candidato])
 
-def agregar_candidatos(nuevo_candidato):
-    candidatos.append(nuevo_candidato)
+def agregar_candidatos():
+    nombre = input("Nombre: ")
+    apellidos = input("Apellidos: ")
+    puesto = input("Puesto deseado: ")
+    tecnologia = input("Tecnología dominante: ")
+    experiencia = int(input("Años de experiencia: "))
+    gmail = input("Correo Gmail: ")
+    telefono = input("Número de teléfono: ")
 
+    nuevo_id=len(candidatos)+1
+
+    nuevo_candidato={
+        "id":nuevo_id,
+        "nombre":nombre,
+        "apellidos":apellidos,
+        "puesto": puesto,
+        "tecnologia": tecnologia,
+        "experiencia": experiencia,
+        "gmail": gmail,
+        "telefono": telefono
+    }
+
+    candidatos.append(nuevo_candidato)
 
 def buscar_id(id_buscado):
     for candidato in candidatos:
@@ -80,7 +98,7 @@ while True:
         buscar_tecnologia(tecnologia_buscada)
 
     elif opcion_menu=="3":
-        agregar_candidatos(candidato4)
+        agregar_candidatos()
         print("Candidato agregado correctamente.")
 
     elif opcion_menu=="4":
