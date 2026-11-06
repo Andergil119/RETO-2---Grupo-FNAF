@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cabecera -->
+    <header>
+        <!-- Imágen del logo de la empresa -->
+        <div class="logo">
+            <img src="imagenes/logo.png" alt="Logo de TalentConnect">
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav class="menu">
+            <a href="#" class="activo">Postular</a>
+            <a href="#">¿Quienes somos?</a>
+            <a href="#">CV</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Formación</a>
+        </nav>
+
+        <!-- Iconos a la izquierda -->
+        <div class="iconos">
+            <button type="button" class="icono" aria-label="Notificaciones" title="Notificaciones">
+                <img src="imagenes/notificaciones.png" alt="">
+            </button>
+            <button type="button" class="icono" aria-label="Perfil de usuario" title="Perfil de usuario">
+                <img src="imagenes/usuario.png" alt="">
+            </button>
+        </div>
+    </header>
+
+    <!-- Imagen principal de la página -->
+    <section class="banner">
+        <img src="imagenes/banner.png" alt="Presentación de TalentConnect">
+    </section>
+
+    <main>
+        <!-- Presentación de la empresa -->
+        <section class="presentacion">
+            <h1>Ayúdanos a conocerte</h1>
+            <p>
+                ¡Bienvenido a TalentConnect! Completa tus datos y adjunta tu currículum
+                para que podamos conocer tu perfil profesional.
+            </p>
+        </section>
+
+        <!-- Formulario de candidatos -->
+        <section class="formulario-contenedor">
+            <h2>Completa tu candidatura</h2>
+            <p class="aviso">Todos los campos son obligatorios.</p>
+
+            <form>
+                <!-- Primer apartado  de datos personales-->
+                <div class="grupo-formulario">
+                    <h3>Datos personales</h3>
+                    <div class="fila">
+                        <div class="campo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="campo">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" id="apellido" name="apellido" required>
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="campo">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segundo apartado de perfil profesional -->
+                <div class="grupo-formulario">
+                    <h3>Perfil profesional</h3>
+                    <div class="fila">
+                        <div class="campo">
+                            <label for="puesto">Puesto al que te postulas</label>
+                            <input type="text" id="puesto" name="puesto" required>
+                        </div>
+                        <div class="campo">
+                            <label for="tecnologia">Tecnología dominante</label>
+                            <input type="text" id="tecnologia" name="tecnologia" required>
+                        </div>
+                    </div>
+                    <div class="fila">
+                        <div class="campo campo-pequeno">
+                            <label for="experiencia">Años de experiencia</label>
+                            <input type="number" id="experiencia" name="experiencia" min="0" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercer apartado para enviar el currículum -->
+                <div class="grupo-formulario">
+                    <h3>Tu currículum</h3>
+                    <p class="tipos">Puedes adjuntar un archivo PDF o Word.</p>
+                    <div class="campo">
+                        <label for="cv">Seleccionar currículum</label>
+                        <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+                    </div>
+                </div>
+
+                <!-- Boton de envio del formulario entero -->
+                <div class="acciones">
+                    <button type="submit" class="boton-enviar">Enviar candidatura</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Final de la página -->
+    <footer>
+         <p>¿Necesitas ayuda? <a href="mailto:info@talentconnect.com">Contáctanos</a></p>
+         <p>TalentConnect - 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,315 @@
+/* Estilo general de la página */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    margin: 0;
+}
+
+/* Cabecera */
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 35px;
+    border-bottom: 1px solid #e5e8ed;
+}
+
+/* Logotipo de la cabecera */
+.logo img {
+    display: block;
+    width: 60px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+/* Enlaces del menú */
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Enlace seleccionado */
+.menu a.activo {
+    color: #0066cc;
+}
+
+/* Efecto al pasar el ratón */
+.menu a:hover {
+    color: #0066cc;
+}
+
+/* Div que contiene los íconos */
+.iconos {
+    display: flex;
+    gap: 12px;
+}
+
+/* Boton que hace la imagen clickeable */
+.icono {
+    width: 40px;
+    height: 40px;
+    background-color: #e8ebf3;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+/* Imagen dentro del botón */
+.icono img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Cambio de color al pasar el mouse por encima del botón */
+.icono:hover {
+    background-color: #d5dcea;
+}
+
+/* Div de la imagemn del banner */
+.banner {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Directamente imagen del banner */
+.banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+}
+
+/* Capa blanca sobre el banner */
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.10);
+    pointer-events: none;
+}
+
+/* Contenido principal */
+main {
+    width: 90%;
+    max-width: 850px;
+    margin: 40px auto 60px;
+}
+
+/* Div que contiene la presentación principal */
+.presentacion {
+    margin-bottom: 40px;
+}
+
+/* Título de la presentación */
+.presentacion h1 {
+    color: #122b54;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 60px;
+}
+
+/* Breve descripción de quienes somos*/
+.presentacion p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Caja del formulario */
+.formulario-contenedor {
+    background-color: white;
+    border: 1px solid #e0e4ea;
+    border-radius: 12px;
+    padding: 35px;
+}
+
+/* Título del formulario */
+.formulario-contenedor h2 {
+    color: #122b54;
+    font-size: 22px;
+    margin: 0 0 6px;
+}
+
+/* Aviso de campos obligatorios */
+.aviso {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+}
+
+/* Apartados del formulario */
+.grupo-formulario {
+    padding-top: 22px;
+    margin-top: 22px;
+    border-top: 1px solid #e7eaf0;
+}
+
+/* Título de los apartados */
+.grupo-formulario h3 {
+    color: #122b54;
+    font-size: 17px;
+    margin: 0 0 18px;
+}
+
+/* Distribución de los campos */
+.fila {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 18px;
+}
+
+/* Tamaño de los campos normales */
+.campo {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Tamaño de los campos pequeños */
+.campo-pequeno {
+    max-width: 200px;
+}
+
+/* Etiquetas de los campos */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+/* Campos que rellena el usuario */
+input {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    box-sizing: border-box;
+    border: 1px solid #cbd2dc;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    background-color: white;
+}
+
+/* Estilo para el campo cuando está enfocado */
+input:focus {
+    outline: 2px solid #b8c9ff;
+    border-color: #1142f9;
+}
+
+/* Texto de tipos de archivo que se pueden adjuntar */
+.tipos {
+    font-size: 13px;
+    color: #666;
+    margin: -8px 0 18px;
+}
+
+/* Campo para subir archivos */
+input[type="file"] {
+    background-color: #f8faff;
+    border: 1px solid #d9e1f5;
+    padding: 12px;
+}
+
+/* Cambiar color de seleccionar archivo*/
+input[type="file"]::file-selector-button {
+    background-color: #e8eeff;
+    color: #123d9b;
+    border: none;
+    border-radius: 6px;
+    padding: 9px 13px;
+    margin-right: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Div del botón principal*/
+.acciones {
+    margin-top: 25px;
+    text-align: center;
+}
+
+/* Botón principal de envío */
+.boton-enviar {
+    background-color: #1142f9;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 13px 24px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Cambio de color al pasar el mouse por encima del botón */
+.boton-enviar:hover {
+    background-color: #0c31bf;
+}
+
+/* Pie de página */
+footer {
+    border-top: 1px solid #e0e4ea;
+    color: #666;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+/* Esto es opcional */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 16px;
+    }
+    .logo img {
+        width: 185px;
+    }
+    .iconos {
+        gap: 7px;
+    }
+    .icono {
+        width: 35px;
+        height: 35px;
+    }
+    .banner {
+        height: 200px;
+    }
+    main {
+        margin-top: 25px;
+    }
+    .presentacion h1 {
+        font-size: 24px;
+    }
+    .formulario-contenedor {
+        padding: 20px;
+    }
+    .fila {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .campo-pequeno {
+        max-width: none;
+    }
+    .boton-enviar {
+        width: 100%;
+    }
+}
