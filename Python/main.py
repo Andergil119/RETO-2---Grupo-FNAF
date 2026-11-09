@@ -7,7 +7,7 @@ candidato1 = {
     "puesto":"programador",
     "tecnologia":"python",
     "experiencia":4,
-    "gmail":"juanperez@gmail.com",
+    "correo":"juanperez@gmail.com",
     "telefono":611111111
 }
 
@@ -18,7 +18,7 @@ candidato2 = {
     "puesto":"diseñador web",
     "tecnologia":"html",
     "experiencia":2,
-    "gmail":"alvarobenito@gmail.com",
+    "correo":"alvarobenito@gmail.com",
     "telefono":622222222
 }
 
@@ -29,25 +29,28 @@ candidato3 = {
     "puesto":"programador",
     "tecnologia":"python",
     "experiencia":3,
-    "gmail":"alfonsomartin@gmail.com",
+    "correo":"alfonsomartin@gmail.com",
     "telefono":633333333
 }
 
 
 candidatos =[candidato1, candidato2, candidato3]
 
+
+# Busca y muestra los candidatos que coincidan con la tecnología que le pidas
 def buscar_tecnologia(tecnologia_buscada):
     for candidato in candidatos:
         if candidato ["tecnologia"] == tecnologia_buscada:
             print([candidato])
 
+# Pide los datos de una persona nueva y la añade a la lista
 def agregar_candidatos():
     nombre = input("Nombre: ")
     apellidos = input("Apellidos: ")
     puesto = input("Puesto deseado: ")
     tecnologia = input("Tecnología dominante: ")
     experiencia = int(input("Años de experiencia: "))
-    gmail = input("Correo Gmail: ")
+    correo = input("Correo electronico: ")
     telefono = input("Número de teléfono: ")
 
     nuevo_id=len(candidatos)+1
@@ -59,28 +62,31 @@ def agregar_candidatos():
         "puesto": puesto,
         "tecnologia": tecnologia,
         "experiencia": experiencia,
-        "gmail": gmail,
+        "correo": correo,
         "telefono": telefono
     }
 
     candidatos.append(nuevo_candidato)
 
+# Busca y muestra al candidato que tenga el número de ID exacto que busques
 def buscar_id(id_buscado):
     for candidato in candidatos:
         if candidato["id"]== id_buscado:
             print([candidato])
 
+# Borra de la lista al candidato que coincida con el ID que le des
 def eliminar_candidato(id_buscado):
     for candidato in candidatos:
         if candidato["id"]==id_buscado:
             candidatos.remove(candidato)
             print("El candidato",[candidato], "fue eliminado correctamente.")
 
+# Guarda todos los cambios de los candidatos en un archivo externo de texto (JSON)
 def guardar_datos():
     with open("candidatos.json","w",encoding="utf-8") as archivo:
         json.dump(candidatos, archivo, indent=4, ensure_ascii=False)
 
-
+# Menú principal que se repite hasta que decides salir
 while True:
     print("1. Ver todos los candidatos. \n" \
     "2. Buscar por tecnologia. \n" \
