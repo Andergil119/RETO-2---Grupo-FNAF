@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "nombre": "Juan",
+        "apellidos": "Perez Garcia",
+        "puesto": "programador",
+        "tecnologia": "python",
+        "experiencia": 4,
+        "correo": "juanperez@gmail.com",
+        "telefono": 611111111
+    },
+    {
+        "id": 2,
+        "nombre": "Alvaro",
+        "apellidos": "Benito Lopez",
+        "puesto": "diseñador web",
+        "tecnologia": "html",
+        "experiencia": 2,
+        "correo": "alvarobenito@gmail.com",
+        "telefono": 622222222
+    },
+    {
+        "id": 3,
+        "nombre": "Alfonso",
+        "apellidos": "Martin Aramburu",
+        "puesto": "programador",
+        "tecnologia": "python",
+        "experiencia": 3,
+        "correo": "alfonsomartin@gmail.com",
+        "telefono": 633333333
+    }
+]

@@ -1,5 +1,8 @@
 import json
 
+with open("candidatos.json", "r", encoding="utf-8") as archivo:
+    candidatos = json.load(archivo)
+
 candidato1 = {
     "id":1,
     "nombre": "Juan",
@@ -39,18 +42,20 @@ candidatos =[candidato1, candidato2, candidato3]
 
 # Busca y muestra los candidatos que coincidan con la tecnología que le pidas
 def buscar_tecnologia(tecnologia_buscada):
+    busqueda_limpia = tecnologia_buscada.strip().lower()
+
     for candidato in candidatos:
-        if candidato ["tecnologia"] == tecnologia_buscada:
+        if candidato ["tecnologia"].lower() == busqueda_limpia:
             print([candidato])
 
 # Pide los datos de una persona nueva y la añade a la lista
 def agregar_candidatos():
-    nombre = input("Nombre: ")
-    apellidos = input("Apellidos: ")
-    puesto = input("Puesto deseado: ")
-    tecnologia = input("Tecnología dominante: ")
+    nombre = input("Nombre: ").strip()
+    apellidos = input("Apellidos: ").strip()
+    puesto = input("Puesto deseado: ").strip()
+    tecnologia = input("Tecnología dominante: ").strip().lower()
     experiencia = int(input("Años de experiencia: "))
-    correo = input("Correo electronico: ")
+    correo = input("Correo electronico: ").strip()
     telefono = input("Número de teléfono: ")
 
     nuevo_id=len(candidatos)+1
