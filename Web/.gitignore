@@ -1,0 +1,9 @@
+# Dependencias de React
+node_modules/
+
+# Archivos generados por Vite
+dist/
+
+# Archivos de configuración privada
+.env
+.env.locals

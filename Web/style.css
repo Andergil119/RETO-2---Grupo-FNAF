@@ -253,11 +253,12 @@ input[type="file"]::file-selector-button {
     background-color: #1142f9;
     color: white;
     border: none;
-    border-radius: 7px;
-    padding: 13px 24px;
+    padding: 12px 25px;
+    border-radius: 50px;
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
+    cursor: pointer;
 }
 
 /* Cambio de color al pasar el mouse por encima del botón */
@@ -272,6 +273,30 @@ footer {
     font-size: 13px;
     text-align: center;
     padding: 20px;
+}
+
+/* Último añadido - Parte del React de Valentina */
+
+/* Mensaje de enviado al finalizar el formulario */
+/* Mensaje de confirmación */
+.confirmacion {
+    background-color: #eef3ff;
+    border: 1px solid #b9caff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+/* TÍtulo de la confirmación */
+.confirmacion h3 {
+    color: #1142f9;
+    margin-top: 0;
+}
+
+/* Texto de la confirmación */
+.confirmacion p {
+    color: #333;
+    font-size: 14px;
 }
 
 /* Responsive */

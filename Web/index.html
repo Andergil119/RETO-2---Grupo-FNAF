@@ -58,7 +58,7 @@
             <h2>Completa tu candidatura</h2>
             <p class="aviso">Todos los campos son obligatorios.</p>
 
-            <form>
+            <form id="formulario-candidatura">
                 <!-- Primer apartado  de datos personales-->
                 <div class="grupo-formulario">
                     <h3>Datos personales</h3>
@@ -118,7 +118,8 @@
 
                 <!-- Boton de envio del formulario entero -->
                 <div class="acciones">
-                    <button type="submit" class="boton-enviar">Enviar candidatura</button>
+                    <!-- Div donde se va a desplegar la confirmación de envio -->
+                    <div id="confirmacion-react"></div>
                 </div>
             </form>
         </section>
@@ -130,5 +131,7 @@
          <p>TalentConnect - 2026</p>
     </footer>
 
+    <!-- Script que va a ejecutar el código de React -->
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
