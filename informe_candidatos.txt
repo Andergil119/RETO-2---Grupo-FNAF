@@ -1,0 +1,28 @@
+INFORME DE CANDIDATOS
+---------------------
+
+id: 1
+Nombre: Juan Perez Garcia
+Puesto: programador
+Tecnologia: python
+Experiencia: 4 años
+Correo: juanperez@gmail.com
+Telefono: 611111111
+
+id: 2
+Nombre: Alvaro Benito Lopez
+Puesto: diseñador web
+Tecnologia: html
+Experiencia: 2 años
+Correo: alvarobenito@gmail.com
+Telefono: 622222222
+
+id: 3
+Nombre: Alfonso Martin Aramburu
+Puesto: programador
+Tecnologia: python
+Experiencia: 3 años
+Correo: alfonsomartin@gmail.com
+Telefono: 633333333
+
+Total de candidatos: 3
