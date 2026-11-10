@@ -36,12 +36,18 @@ candidato3 = {
     "telefono":"633333333"
 }
 
-# Los candidatos de ejemplo solo se usan si no había datos guardados
+# Adibidezko hautagaiak gordetako daturik ez zegoenean bakarrik erabiltzen da
 if len(candidatos)==0:
     candidatos = [candidato1, candidato2, candidato3]
 
-# Devuelve una lista de candidatos
+
 def mostrar_candidatos(lista, titulo="Candidatos"):
+    """Hautagaien zerrenda bat erakusten du.
+    
+    Args:
+        lista (list): Erakutsi beharreko hautagaien hiztegi-zerrenda.
+        titulo (str): Zerrendaren titulua.
+    """
     print(titulo + ":")
     for candidato in lista:
         print("id:", candidato["id"], "|",
@@ -52,8 +58,15 @@ def mostrar_candidatos(lista, titulo="Candidatos"):
               candidato["correo"], "|",
               candidato["telefono"])
 
-# Busca y devuelve los candidatos que coincidan con la tecnología que le pidas
 def buscar_tecnologia(tecnologia_buscada):
+    """Eskatutako teknologiarekin bat datozen hautagaiak bilatu eta itzultzen ditu.
+    
+    Args:
+        tecnologia_buscada (str): Bilatu nahi den teknologiaren izena.
+        
+    Returns:
+        list: Bat datozen hautagaien zerrenda.
+    """
     busqueda_limpia = tecnologia_buscada.strip().lower()
     resultado = []
 
@@ -62,8 +75,9 @@ def buscar_tecnologia(tecnologia_buscada):
             resultado.append(candidato)
     return(resultado)
 
-# Pide los datos de una persona nueva y la añade a la lista
+
 def agregar_candidatos():
+    """Pertsona berri baten datuak eskatu eta hautagaien zerrendari gehitzen dio."""
     nombre = input("Nombre: ").strip()
     apellidos = input("Apellidos: ").strip()
     puesto = input("Puesto deseado: ").strip()
@@ -100,15 +114,27 @@ def agregar_candidatos():
 
     candidatos.append(nuevo_candidato)
 
-# Busca y devuelven al candidato que tenga el número de ID exacto que busques
 def buscar_id(id_buscado):
+    """Emandako id-a duen hautagaia bilatu eta itzultzen du.
+    
+    Args:
+        id_buscado (int): Bilatu behar den id zenbakia.
+        
+    Returns:
+        dict/None: Aurkitutako hautagaiaren hiztegia, edo None ez badago.
+    """
     for candidato in candidatos:
         if candidato["id"]== id_buscado:
             return candidato
     return None
 
-# Borra de la lista al candidato que coincida con el ID que le des
+
 def eliminar_candidato(id_buscado):
+    """Emandako id-arekin bat datorren hautagaia zerrendatik ezabatzen du.
+    
+    Args:
+        id_buscado (int): Ezabatu behar den hautagaiaren id-a.
+    """
     for candidato in candidatos:
         if candidato["id"]==id_buscado:
             candidatos.remove(candidato)
@@ -116,35 +142,50 @@ def eliminar_candidato(id_buscado):
             return
     print("No existe ningun candidato con ese id.")
 
-# Devuelve las tecnologias diferentes que hay entre los candidatos
 def listar_tecnologias():
+    """Hautagaien artean dauden teknologia desberdinak itzultzen ditu.
+    
+    Returns:
+        set: Teknologia ezberdinen multzoa.
+    """
     tecnologias = set()
     for candidato in candidatos:
         tecnologias.add(candidato["tecnologia"])
     return tecnologias
 
-#Devuelve las tecnologias pedidas que ningun candidato tiene
 def tecnologias_sin_candidatos(tecnologia_buscada):
+    """Eskatutako teknologietatik inork menderatzen ez dituenak itzultzen ditu.
+    
+    Args:
+        tecnologia_buscada (str): Bilatutako teknologia kate bat (komaz bereizita).
+        
+    Returns:
+        set: Inork ez dituen teknologien multzoa.
+    """
     pedidas = set()
     for tecnologia in tecnologia_buscada.lower().split(","):
         pedidas.add(tecnologia.strip())
     return pedidas - listar_tecnologias()
 
-# Devuelve un diccionario de cuantos candidatos hay por puesto
 def contar_por_puesto():
+    """Lanpostu bakoitzean zenbat hautagai dauden adierazten duen hiztegia itzultzen du.
+    
+    Returns:
+        dict: Lanpostuak eta horietako bakoitzean dauden hautagai kopurua.
+    """
     por_puesto = {}
     for candidato in candidatos:
         puesto = candidato["puesto"].lower()
         por_puesto[puesto] = por_puesto.get(puesto, 0) + 1
     return por_puesto
 
-# Guarda todos los cambios de los candidatos en un archivo externo de texto (JSON)
 def guardar_datos():
+    """Hautagaien aldaketa guztiak JSON fitxategi batean gordetzen ditu."""
     with open("candidatos.json","w",encoding="utf-8") as archivo:
         json.dump(candidatos, archivo, indent=4, ensure_ascii=False)
 
-# Crear un informe .txt
 def exportar_informe():
+    """Hautagaien datuekin .txt txosten bat sortu eta esportatzen du."""
     with open("informe_candidatos.txt", "w", encoding="utf-8") as archivo:
         archivo.write("INFORME DE CANDIDATOS\n")
         archivo.write("---------------------\n\n")
@@ -159,7 +200,7 @@ def exportar_informe():
             archivo.write("\n")
         archivo.write("Total de candidatos: " + str(len(candidatos)) + "\n")
 
-# Menú principal que se repite hasta que decides salir
+# Irten erabaki arte errepikatzen den menu nagusia
 while True:
     print("1. Ver todos los candidatos. \n" \
     "2. Buscar por tecnologia. \n" \
